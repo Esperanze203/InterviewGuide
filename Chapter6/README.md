@@ -29,7 +29,7 @@ clientTop：边框border的厚度\
 scrollTop：滚动后被隐藏的高度，获取对象最顶端与窗口中可见内容最顶端之间的距离\
 offsetTop：获取指定对象相对于版面或布局中设置position属性的父容器顶端位置的距离
 
-![](Images/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%BD%E9%AB%98.jpg)
+![](../.gitbook/assets/浏览器宽高.jpg)
 
 **四、JS类型判断**
 
@@ -272,7 +272,7 @@ call和apply作用：改变this的指向；借用别的对象的方法；调用�
 
 **三十一、js原型链，原型链的顶端是什么？Object的原型是什么？Object的原型的原型是什么？**
 
-![](Images/%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg)
+![](<../.gitbook/assets/原型链 (1).jpg>)
 
 注：蓝色部分为原型链
 
@@ -358,7 +358,7 @@ async/await中的错误处理：使用try-catch来错误捕捉；使用promise�
 
 JavaScript：单线程（代码执行时只有一个主线程来处理所有任务）非阻塞（当代码需要进行一项异步任务时，主线程挂起该任务，然后在异步任务返回结果的时候再根据一定规则去执行相应的回调→Event Loop）
 
-![](Images/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.png)
+![](<../.gitbook/assets/浏览器事件循环 (1).png>)
 
 1. 任务队列
    * Macrotask（宏任务）：script（整体代码）、setTimeout、setInterval、I/O、UI交互事件、postMessage、MessageChannel
@@ -387,37 +387,40 @@ JavaScript：单线程（代码执行时只有一个主线程来处理所有任�
    * libuv库负责Node API的执行，它将不同的任务分配给不同的线程，形成一个事件循环，以异步的方式将任务的执行结果返回给V8引擎
    * V8引擎将结果返回用户
 
-![](Images/Node.png)
+![](../.gitbook/assets/Node.png)
 
 1.  事件循环六个阶段
 
     libuv中的事件循环分六个阶段，它们会按照顺序反复运行，每当进入某一个阶段的时候，都会从对应的回调队列中取出函数去执行。当队列为空或者执行的回调函数数量达到系统设定的阈值，就会进入下一阶段。
 
-    <img src="Images/node%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.jpg" alt="" data-size="original">
 
-    * timers阶段\
-      执行setTimeout()、setInterval()的回调，由poll阶段控制（与浏览器不同，timers阶段有几个setTimeout、setInterval都会依次执行）
-    * I/O callbacks阶段：处理上一轮循环中少数未执行的I/O回调
-    * idle，prepare阶段：仅node内部使用
-    *   poll阶段\
-        获取新的I/O事件，适当的条件下node将阻塞在这里。该阶段系统会做两件事：回到timer阶段执行回调；执行I/O回调。在进入该阶段时：
 
-        如果没有设定timer，则：1.若poll队列不为空，会遍历回调队列并同步执行，直到队列为空或者达到系统限制；2.若poll队列为空，则（1）若有setImmediate回调需要执行，poll阶段会停止并且进入到check阶段执行回调；（2）若没有setImmediate回调需要执行，会等待回调被加入到队列中并立即执行回调，同时会有个超时时间防止死等。
+* timers阶段\
+  执行setTimeout()、setInterval()的回调，由poll阶段控制（与浏览器不同，timers阶段有几个setTimeout、setInterval都会依次执行）
+* I/O callbacks阶段：处理上一轮循环中少数未执行的I/O回调
+* idle，prepare阶段：仅node内部使用
+*   poll阶段\
+    获取新的I/O事件，适当的条件下node将阻塞在这里。该阶段系统会做两件事：回到timer阶段执行回调；执行I/O回调。在进入该阶段时：
 
-        如果设定了timer且poll队列为空，则会判断是否有timer超时，如果有的话会回到timer阶段执行回调
-    * check阶段：执行setImmediate()的回调
-    * close callbacks阶段：执行socket的close事件回调
-2.  MicroTask与MacroTask
+    如果没有设定timer，则：1.若poll队列不为空，会遍历回调队列并同步执行，直到队列为空或者达到系统限制；2.若poll队列为空，则（1）若有setImmediate回调需要执行，poll阶段会停止并且进入到check阶段执行回调；（2）若没有setImmediate回调需要执行，会等待回调被加入到队列中并立即执行回调，同时会有个超时时间防止死等。
+
+    如果设定了timer且poll队列为空，则会判断是否有timer超时，如果有的话会回到timer阶段执行回调
+* check阶段：执行setImmediate()的回调
+* close callbacks阶段：执行socket的close事件回调
+
+1.  MicroTask与MacroTask
 
     MacroTask：setTimeout、setInterval、setImmediate、script（整体代码）、I/O操作\
     MicroTask：process.nextTick、Promise().then
-3.  注意点
+2.  注意点
 
     setTimeout和setImmediate\
     两者调用时机不同，setImmediate设计在poll阶段完成时执行，即check阶段；setTimeout设计在poll阶段为空闲时，且设定时间达到后在timer阶段执行。二者在异步I/O callbacks内部调用时，总是先执行setImmediate再执行setTimeout；其他情况先后顺序不一定（setTimeout(func, 0)===setTimeout(func, 1)，如果在准备时候花费时间大于1ms，则在timers阶段就会直接执行setTimeout回调，小于1ms先执行setImmediate回调）
 
     process.nextTick\
     独立于Event Loop之外，有一个自己的队列，当每个阶段完成后如果存在nextTick队列，就会转而清空nextTick队列中的所有回调函数，且优先于其他microtask执行
+
+![](../.gitbook/assets/事件循环差异.png)
 
 **四十一、Node与浏览器的Event Loop差异**
 
