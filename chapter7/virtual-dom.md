@@ -1,6 +1,6 @@
 # virtual dom
 
-**一、什么是virtual dom**
+#### **一、什么是virtual dom**
 
 用js对象结构表示DOM树结构，然后用这个树构建一个真正的DOM树，插到文档中，当状态变更时，重新构造一颗新的对象树，然后将新的树和旧的树进行比较，记录差异，并把差异以打补丁的方式应用到真正的DOM树上来更新视图。本质是JS和DOM之间做了一个缓存。
 
@@ -10,9 +10,9 @@
 * props：该元素所包含的属性
 * children：该元素的孩子
 
-**二、virtual dom中的diff算法**
+#### **二、virtual dom中的diff算法**
 
-![](../Chapter7/Images/diff%E7%AE%97%E6%B3%95.jpg)
+![](<../.gitbook/assets/diff算法 (1).jpg>)
 
 *   核心：逐层比较→前端中很少跨层移动dom元素→时间复杂度O(n)
 
@@ -30,7 +30,7 @@
       给子节点加上唯一标识key（tagName可能重复，不能用其进行对比），形成一个子节点列表。\
       问题转化为已知新旧节点的顺序，求最小的插入、删除操作（Levenshtein Distance最小编辑距离）
 
-**三、Levenshtein Distance最小编辑距离**
+#### **三、Levenshtein Distance最小编辑距离**
 
 描述：编辑距离是指两个字串之间，由一个转成另一个所需的编辑操作次数。最小编辑距离，是指所需最小的编辑操作次数。\
 最小编辑距离通常作为一种相似度计算函数被用于多种实际应用中。
@@ -51,11 +51,17 @@
 2. 建立$$dp[str1.length+1][str2.length+1]$$，#表示串前可以插入任何字符
 3.  初始化矩阵
 
-    ![](../Chapter7/Images/diff%E7%9F%A9%E9%98%B51.jpg)
-4. 遍历矩阵并计算
+    ![](<../.gitbook/assets/diff矩阵1 (1).jpg>)
+4.  遍历矩阵并计算
 
-dp\[i]\[j]=\begin{cases} dp\[i]\[j-1]+1 \quad\quad\quad\quad\quad(1)\ dp\[i-1]\[j]+1 \quad\quad\quad\quad\quad(2)\ dp\[i-1]\[j-1]+1:0 \quad\quad(3)\end{cases}
+    $$dp[i][j]=\begin{cases} dp[i][j-1]+1 \quad\quad\quad\quad\quad(1)\\ dp[i-1][j]+1 \quad\quad\quad\quad\quad(2)\\ dp[i-1][j-1]+1:0 \quad\quad(3)\end{cases}$$
 
-$$$
-（1）算法思想转化为：去掉str2末尾一个字符，变成str1的最小编辑距离+1 （2）算法思想转化为：去掉str1末尾一个字符，变成str2的最小编辑距离+1 （3）算法思想转化为：去掉str1和str2末尾各一个字符，若两个末尾字符相同+0，不同+1 <img src="\Images\diff矩阵2.jpg" style="zoom:80%;" /> 5. str1和str2的最小编辑距离为$$dp[str1.length][str2.length]$$ 参考：[深入理解react中的虚拟DOM、diff算法](https://www.cnblogs.com/zhuzhenwei918/p/7271305.html)
-$$$
+    * （1）算法思想转化为：去掉str2末尾一个字符，变成str1的最小编辑距离+1
+    * （2）算法思想转化为：去掉str1末尾一个字符，变成str2的最小编辑距离+1
+    * （3）算法思想转化为：去掉str1和str2末尾各一个字符，若两个末尾字符相同+0，不同+1​
+
+    ![](<../.gitbook/assets/diff矩阵2 (1).jpg>)
+5.  str1和str2的**最小编辑距离**为：$$dp[str1.length][str2.length]dp[str1.length][str2.length]$$​
+
+
+
