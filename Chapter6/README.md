@@ -248,7 +248,7 @@ js应用程序的静态模块打包器。当用webpack处理应用程序时，�
 
     引用数据类型占用空间大、大小不固定，若存储在栈中会影响程序运行的性能；但引用数据类型的指针存储在栈中，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会先检索其在栈中的地址，取得地址后再从堆中获得实体。
 
-#### **二十七、跨域原理？js实现跨域**&#x20;
+#### **二十七、跨域原理？js实现跨域？**
 
 **跨域**：浏览器不能执行其他网站的脚本，是由浏览器的同源策略造成的，是浏览器对JS实施的安全限制\
 （只要协议、域名、端口有任何一个不同，都被当作是不同的域）
@@ -257,7 +257,9 @@ js应用程序的静态模块打包器。当用webpack处理应用程序时，�
 
 **实现方法**：CORS；代理服务器；JSONP；document.domain+iframe；location.hash+iframe；window.name+iframe；postMessage
 
-#### **二十八、什么是symbol** ES6新增属性，Symbol(description)函数生成一个全局唯一的值，能够作为对象属性的标识符；description为字符串类型，仅作为对symbol的描述，相当于一个注释。
+#### **二十八、什么是symbol？**
+
+ES6新增属性，Symbol(description)函数生成一个全局唯一的值，能够作为对象属性的标识符；description为字符串类型，仅作为对symbol的描述，相当于一个注释。
 
 #### **二十九、this的指向有哪几种**
 
@@ -423,7 +425,7 @@ JavaScript：单线程（代码执行时只有一个主线程来处理所有任�
         如果设定了timer且poll队列为空，则会判断是否有timer超时，如果有的话会回到timer阶段执行回调
     * **check阶段**：执行setImmediate()的回调
     * **close callbacks阶段**：执行socket的close事件回调
-4.  MicroTask与MacroTask
+4.  **MicroTask**与**MacroTask**（**微命令**和**宏命令**）
 
     MacroTask：setTimeout、setInterval、setImmediate、script（整体代码）、I/O操作\
     MicroTask：process.nextTick、Promise().then
