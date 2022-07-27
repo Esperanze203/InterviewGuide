@@ -31,6 +31,7 @@
   * [js精度丢失](chapter6/js-jing-du-diu-shi.md)
 * [Vue](chapter7/README.md)
   * [Vue使用](chapter7/vue-shi-yong.md)
+  * [Vue 原理](chapter7/vue-yuan-li.md)
   * [Vue 面试真题演练](chapter7/vue-mian-shi-zhen-ti-yan-lian.md)
   * [Vue的生命周期](chapter7/vue-sheng-ming-zhou-qi.md)
   * [virtual dom](chapter7/virtual-dom.md)
