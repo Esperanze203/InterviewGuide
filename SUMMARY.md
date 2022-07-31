@@ -28,7 +28,7 @@
 * [HTML](Chapter4/README.md)
 * [CSS](Chapter5/README.md)
 * [JavaScript/ES6](Chapter6/README.md)
-  * [js精度丢失](chapter6/js-jing-du-diu-shi.md)
+  * [JavaScript基础](chapter6/javascript-ji-chu.md)
 * [Vue](chapter7/README.md)
   * [Vue使用](chapter7/vue-shi-yong.md)
   * [Vue 原理](chapter7/vue-yuan-li.md)
