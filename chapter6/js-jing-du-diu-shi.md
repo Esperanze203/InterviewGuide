@@ -79,10 +79,23 @@ var myBoolean = new Boolean();
 
 #### [#](https://web.qianguyihao.com/04-JavaScript%E5%9F%BA%E7%A1%80/19-%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95.html#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F) 数组排序 <a href="#shu-zu-pai-xu" id="shu-zu-pai-xu"></a>
 
-| 方法        | 描述                                 | 备注     |
-| --------- | ---------------------------------- | ------ |
-| reverse() | 反转数组，返回结果为**反转后的数组**               | 会改变原数组 |
-| sort()    | 对数组的元素,默认按照**Unicode 编码**，从小到大进行排序 | 会改变原数组 |
+| 方法                                     | 描述                                                                                 | 备注     |
+| -------------------------------------- | ---------------------------------------------------------------------------------- | ------ |
+| reverse()                              | 反转数组，返回结果为**反转后的数组**                                                               | 会改变原数组 |
+| <mark style="color:red;">sort</mark>() | 对数组的元素,默认按照**Unicode 编码**，从小到大进行排序；语法：_**array**_**.sort(**_**sortfunction**_**)** | 会改变原数组 |
+
+<mark style="color:red;">sort</mark>() 默认排序顺序为按**字母升序**。
+
+**注意：**当数字是按字母顺序排列时"40"将排在"5"前面。
+
+使用数字排序，必须通过一个函数作为参数来调用。函数指定数字是按照升序还是降序排列。例如：
+
+```javascript
+var points = [40,100,1,5,25,10];
+points.sort(function(a,b){return a-b});
+// 简写：
+points.sort((a,b)=>a-b);
+```
 
 #### [#](https://web.qianguyihao.com/04-JavaScript%E5%9F%BA%E7%A1%80/19-%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95.html#%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E7%9A%84%E5%85%83%E7%B4%A0) 查找数组的元素 <a href="#cha-zhao-shu-zu-de-yuan-su" id="cha-zhao-shu-zu-de-yuan-su"></a>
 
