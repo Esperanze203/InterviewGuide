@@ -36,9 +36,9 @@
 
 写二分法，区间的定义一般为两种，<mark style="color:red;">左闭右闭</mark>即**\[left, right]**，或者<mark style="color:red;">左闭右开</mark>即**\[left, right)**。
 
-### 二分法第一种写法 <a href="#er-fen-fa-di-yi-zhong-xie-fa" id="er-fen-fa-di-yi-zhong-xie-fa"></a>
+### 二分法第一种写法（我的写法） <a href="#er-fen-fa-di-yi-zhong-xie-fa" id="er-fen-fa-di-yi-zhong-xie-fa"></a>
 
-第一种写法，我们定义 target 是在一个在左闭右闭的区间里，**也就是\[left, right] （这个很重要非常重要）**。区间的定义这就决定了二分法的代码应该如何写，**因为定义target在\[left, right]区间，所以有如下两点：**
+第一种写法，我们定义 target 是在一个在左闭右闭的区间里，**也就是**<mark style="color:red;">**\[left, right]**</mark>** （这个很重要非常重要）**。区间的定义这就决定了二分法的代码应该如何写，**因为定义target在\[left, right]区间，所以有如下两点：**
 
 * while (left <= right) 要使用 <= ，因为left == right是有意义的，所以使用 <=
 * if (nums\[middle] > target) right 要赋值为 middle - 1，因为当前这个nums\[middle]一定不是target，那么接下来要查找的左区间结束下标位置就是 middle - 1
@@ -123,3 +123,14 @@ var search = function(nums, target) {
     return -1;
 };
 ```
+
+### 相关题目
+
+[35.搜索插入位置](https://programmercarl.com/0035.%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE.html)
+
+[34.在排序数组中查找元素的第一个和最后一个位置](https://programmercarl.com/0034.%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE.html)
+
+[33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array)
+
+
+
