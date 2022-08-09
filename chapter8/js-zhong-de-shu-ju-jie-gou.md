@@ -24,7 +24,7 @@ JavaScript中没有队列这个数据结构，但是可以用**数组**来实现
 
 ![](https://img-blog.csdnimg.cn/0577e68d4f624351a896590d8947bc03.png?x-oss-process=image/watermark,type\_ZHJvaWRzYW5zZmFsbGJhY2s,shadow\_50,text\_Q1NETiBA5ZWKYemYv-iKsQ==,size\_20,color\_FFFFFF,t\_70,g\_se,x\_16)
 
-队列是一个先进先出的数据结构，一般JavaScript中采用队列解决问题时会用到
+队列是一个**先进先出**的数据结构，一般JavaScript中采用队列解决问题时会用到
 
 1. `入队`<mark style="color:red;">`push ()`</mark>：在数组的尾部添加元素
 2. `出队`<mark style="color:red;">`shift ()`</mark>：移除数组中第一个元素
