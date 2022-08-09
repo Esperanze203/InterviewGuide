@@ -224,7 +224,21 @@ JavaScript中ES6中新增了集合这种数据结构，可以通过实例化Set�
 
 <mark style="color:orange;">`const set = new Set()`</mark>
 
-集合常用来解决的问题：
+#### Set 对象的方法和属性
+
+| new Set() | 创建新的 Set 对象。    |
+| --------- | --------------- |
+| add()     | 向 Set 添加新元素。    |
+| clear()   | 从 Set 中删除所有元素。  |
+| delete()  | 删除由其值指定的元素。     |
+| entries() | 返回 Set 对象中值的数组。 |
+| has()     | 如果值存在则返回 true。  |
+| forEach() | 为每个元素调用回调。      |
+| keys()    | 返回 Set 对象中值的数组。 |
+| values()  | 与 keys() 相同。    |
+| size      | 返回元素计数。         |
+
+#### 集合常用来解决的问题：
 
 1. 去重\
    `set = new Set(arr)`，返回一个不含重复元素的集合
