@@ -7,10 +7,10 @@ __[_JavaScript中的6种常见数据结构_](https://blog.csdn.net/aaahuahua/art
 * [1、Queue 队列](js-zhong-de-shu-ju-jie-gou.md#1queue-dui-lie)
 * [2、Stack 栈](js-zhong-de-shu-ju-jie-gou.md#t2)
 * [3、Linked List 链表](js-zhong-de-shu-ju-jie-gou.md#3linked-list-lian-biao)
-* [4、Set集合](js-zhong-de-shu-ju-jie-gou.md#t4)
+* [4、Set 集合](js-zhong-de-shu-ju-jie-gou.md#t4)
 * [5、Hash table 哈希表](js-zhong-de-shu-ju-jie-gou.md#t5)
-* [6、Tree树](js-zhong-de-shu-ju-jie-gou.md#t5)
-* [7、Trie 前缀树、字典树](js-zhong-de-shu-ju-jie-gou.md#7trie-qian-zhui-shu-zi-dian-shu)
+* [6、Tree 树](js-zhong-de-shu-ju-jie-gou.md#t5)
+* [7、Trie 前缀树/字典树](js-zhong-de-shu-ju-jie-gou.md#7trie-qian-zhui-shu-zi-dian-shu)
 * [8、Heap 堆](js-zhong-de-shu-ju-jie-gou.md#t6)
 * [9、Graph 图](js-zhong-de-shu-ju-jie-gou.md#undefined)
 
@@ -340,11 +340,11 @@ function HashTable() {
 
 在计算机科学中，树是一种十分重要的数据结构。树被描述为一种分层数据抽象模型，常用来描述数据间的层级关系和组织结构。树也是一种非顺序的数据结构。下图展示了树的定义：
 
-![树的定义](<../.gitbook/assets/image (4).png>)
+![树的定义](../.gitbook/assets/image.png)
 
 #### **树的常用遍历方式**
 
-****![](<../.gitbook/assets/image (2).png>)****
+****![](<../.gitbook/assets/image (5).png>)****
 
 &#x20;**1. 深度优先遍历**
 
@@ -411,7 +411,7 @@ breadth(tree)
 
 根据二叉树的描述，一个节点最多只有两个子节点，我们可以使用[《JavaScript数据结构——链表的实现与应用》](https://www.cnblogs.com/jaxu/p/11277732.html)一文中的双向链表来实现二叉搜索树中的每一个节点。下面是二叉搜索树的数据结构示意图：
 
-![](<../.gitbook/assets/image (5).png>)
+![](<../.gitbook/assets/image (3).png>)
 
 ```javascript
 // 二叉树搜索树(BST)及常用方法的js实现 
