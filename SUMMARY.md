@@ -37,6 +37,7 @@
   * [virtual dom](chapter7/virtual-dom.md)
   * [双向绑定](chapter7/shuang-xiang-bang-ding.md)
 * [来编个程吧](chapter8/README.md)
+  * [JS中的数据结构](chapter8/js-zhong-de-shu-ju-jie-gou.md)
   * [机考要点](chapter8/ji-kao-yao-dian.md)
   * [数组](chapter8/shu-zu/README.md)
     * [二分查找](chapter8/shu-zu/er-fen-cha-zhao.md)
