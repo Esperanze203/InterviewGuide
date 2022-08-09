@@ -4,15 +4,18 @@ __[_JavaScript中的6种常见数据结构_](https://blog.csdn.net/aaahuahua/art
 
 [_Javascript中的8种常见数据结构_](https://blog.csdn.net/weixin\_48726650/article/details/107789164) **** （完全独立实现）
 
+_****_[_**JavaScript 算法与数据结构**_](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)  _****_**  (更全的仓库)**
+
 * [1、Queue 队列](js-zhong-de-shu-ju-jie-gou.md#1queue-dui-lie)
 * [2、Stack 栈](js-zhong-de-shu-ju-jie-gou.md#t2)
 * [3、Linked List 链表](js-zhong-de-shu-ju-jie-gou.md#3linked-list-lian-biao)
 * [4、Set 集合](js-zhong-de-shu-ju-jie-gou.md#t4)
-* [5、Hash table 哈希表](js-zhong-de-shu-ju-jie-gou.md#t5)
-* [6、Tree 树](js-zhong-de-shu-ju-jie-gou.md#t5)
-* [7、Trie 前缀树/字典树](js-zhong-de-shu-ju-jie-gou.md#7trie-qian-zhui-shu-zi-dian-shu)
-* [8、Heap 堆](js-zhong-de-shu-ju-jie-gou.md#t6)
-* [9、Graph 图](js-zhong-de-shu-ju-jie-gou.md#undefined)
+* [5、Map 字典](js-zhong-de-shu-ju-jie-gou.md#5map-zi-dian)
+* [6、Hash table 哈希表](js-zhong-de-shu-ju-jie-gou.md#t5)
+* [7、Tree 树](js-zhong-de-shu-ju-jie-gou.md#t5)
+* [8、Trie 前缀树/字典树](js-zhong-de-shu-ju-jie-gou.md#7trie-qian-zhui-shu-zi-dian-shu)
+* [9、Heap 堆](js-zhong-de-shu-ju-jie-gou.md#t6)
+* [10、Graph 图](js-zhong-de-shu-ju-jie-gou.md#undefined)
 
 ### 1、Queue [队列](https://so.csdn.net/so/search?q=%E9%98%9F%E5%88%97\&spm=1001.2101.3001.7020)
 
@@ -217,7 +220,9 @@ class LinkedList {
 
 **集合**：一种无序且唯一的数据结构，集合区别队列、栈、链表最大的区别就是元素不能重复
 
-JavaScript中ES6中新增了集合这种数据结构，可以通过实例化Set对象来创建集合`const set = new Set()`
+JavaScript中ES6中新增了集合这种数据结构，可以通过实例化Set对象来创建集合：&#x20;
+
+<mark style="color:orange;">`const set = new Set()`</mark>
 
 集合常用来解决的问题：
 
@@ -257,7 +262,81 @@ let set3 = new Set([...set1].filter(x => !set2.has(x)));
 
 `...`是ES6中新增的扩展运算符，对象中的扩展运算符(…)用于取出参数对象中的所有可遍历属性，拷贝到当前对象之中。`[...set]`的意思就是将集合转换为数组
 
-### 5、Hash table 哈希表 <a href="#t5" id="t5"></a>
+### 5、Map 字典
+
+Map 对象存有键值对，其中的键可以是任何数据类型。
+
+Map 对象记得键的原始插入顺序。
+
+Map 对象具有表示映射大小的属性。
+
+#### 基本的 Map() 方法
+
+| Method    | Description        |
+| --------- | ------------------ |
+| new Map() | 创建新的 Map 对象。       |
+| set()     | 为 Map 对象中的键设置值。    |
+| get()     | 获取 Map 对象中键的值。     |
+| entries() | 返回 Map 对象中键/值对的数组。 |
+| keys()    | 返回 Map 对象中键的数组。    |
+| values()  | 返回 Map 对象中值的数组。    |
+
+#### Map() 属性
+
+| Property | Description     |
+| -------- | --------------- |
+| size     | 获取 Map 对象中某键的值。 |
+
+#### 创建 Map 对象
+
+能够使用**对象**作为**键**是 Map 的一个重要特性：
+
+```javascript
+// 创建对象
+const apples = {name: 'Apples'};
+const bananas = {name: 'Bananas'};
+const oranges = {name: 'Oranges'};
+
+// 创建新的 Map
+const fruits = new Map();
+
+// Add new Elements to the Map
+fruits.set(apples, 500);
+fruits.set(bananas, 300);
+fruits.set(oranges, 200);
+```
+
+也可以将 Array 传递给 `new Map()` 构造函数：
+
+```javascript
+// 返回
+const apples = {name: 'Apples'};
+const bananas = {name: 'Bananas'};
+const oranges = {name: 'Oranges'};
+
+// 创建新的 Map
+const fruits = new Map([;
+  [apples, 500],
+  [bananas, 300],
+  [oranges, 200]
+]);
+```
+
+#### 获取键的值
+
+get() 方法获取 Map 中键的值：
+
+```javascript
+fruits.get(apples);    // 返回 500
+```
+
+Remember: The key is an object (apples), not a string ("apples"):
+
+```javascript
+fruits.get("apples");  // 返回 undefined
+```
+
+### 6、Hash table 哈希表 <a href="#t5" id="t5"></a>
 
 ![image](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xOTExNjU2Ni0zNTcxMTAwNjkxYTdjMjFk?x-oss-process=image/format,png)
 
@@ -332,7 +411,7 @@ function HashTable() {
 }
 ```
 
-### 6、Tree 树 <a href="#t5" id="t5"></a>
+### 7、Tree 树 <a href="#t5" id="t5"></a>
 
 [_JavaScript数据结构——树的实现_](https://www.cnblogs.com/jaxu/p/11309385.html)__
 
@@ -758,7 +837,7 @@ perorder(tree)
 中序遍历根节点左边为左子树，右边为右子树\
 后序遍历最后一个为根节点
 
-### 7、Trie 前缀树/**字典树**
+### 8、Trie 前缀树/**字典树**
 
 &#x20;(Trie **** 发音为 “try”)&#x20;
 
@@ -833,7 +912,7 @@ function Trie() {
 }
 ```
 
-### 8、Heap 堆 <a href="#t6" id="t6"></a>
+### 9、Heap 堆 <a href="#t6" id="t6"></a>
 
 堆是一种特殊的完全二叉树
 
@@ -967,7 +1046,7 @@ h.insert(1);
 //虽然不能保证是按照最小堆来排列，但是能保证堆顶最小，也就是父节点的元素一定大于子节点的元素
 ```
 
-### 9、Graph 图
+### 10、Graph 图
 
 ![image](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xOTExNjU2Ni02YmY3ODIwY2RjNjM0NDdl?x-oss-process=image/format,png)
 
