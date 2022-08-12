@@ -362,7 +362,7 @@ fruits.get("apples");  // 返回 undefined
 * `remove`：删除键值对
 * `lookup`：使用键查找对应的值
 
-一个Javascript中简化的哈希表的例子：
+一个Javascript中简化的哈希表的例子：（[完整的实现](https://github.com/trekhleb/javascript-algorithms/blob/master/src/data-structures/hash-table/HashTable.js)）
 
 ```javascript
 function hash(string, max) {

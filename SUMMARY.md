@@ -43,6 +43,8 @@
     * [二分查找](chapter8/shu-zu/er-fen-cha-zhao.md)
     * [移除元素](chapter8/shu-zu/yi-chu-yuan-su.md)
     * [有序数组的平方](chapter8/shu-zu/you-xu-shu-zu-de-ping-fang.md)
+  * [字符串](chapter8/zi-fu-chuan/README.md)
+    * [RegExp 对象-正则匹配](chapter8/zi-fu-chuan/regexp-dui-xiang-zheng-ze-pi-pei.md)
   * [栈与队列](chapter8/zhan-yu-dui-lie/README.md)
     * [单调队列](chapter8/zhan-yu-dui-lie/dan-tiao-dui-lie.md)
     * [优先队列](chapter8/zhan-yu-dui-lie/you-xian-dui-lie.md)
