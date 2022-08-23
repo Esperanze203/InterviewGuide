@@ -59,5 +59,7 @@
   * [金钱格式化](chapter8/jin-qian-ge-shi-hua.md)
   * [闭包实现单例模式](chapter8/bi-bao-shi-xian-dan-li-mo-shi.md)
   * [防抖和节流](chapter8/fang-dou-he-jie-liu.md)
+  * [动态规划](chapter8/dong-tai-gui-hua/README.md)
+    * [0-1背包](chapter8/dong-tai-gui-hua/01-bei-bao.md)
 * [其他非技术问题](Chapter10/README.md)
 * [你还有什么问题要问我吗](Chapter9/README.md)
