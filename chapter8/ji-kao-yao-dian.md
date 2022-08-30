@@ -10,7 +10,7 @@
 
 ### 基础数据结构概念，基本操作，以及优缺点等
 
-&#x20;1、字符串操作（标准库，解析，匹配等）
+&#x20;1、字符串操作（标准库，<mark style="color:red;">解析，匹配</mark>等）
 
 2、线性表（含数组，动态数组等）
 
@@ -24,44 +24,44 @@
 
 ### 高级数据结构概念，基本操作，以及优缺点等
 
-&#x20;1、二叉查找树    平衡树
+&#x20;1、二叉查找树    <mark style="color:red;">平衡树</mark>
 
-2、堆   二叉堆
+2、<mark style="color:red;">堆   二叉堆</mark>
 
-3、图论 无向图、有向图等基本知识
+3、<mark style="color:red;">图论 无向图、有向图</mark>等基本知识
 
 ### 常用算法及思想&#x20;
 
-1、排序算法（快速、插入、堆排序等） 注：高级语言可以使用库函数
+<mark style="color:red;">1、排序算法（快速、插入、堆排序等）</mark> 注：高级语言可以使用库函数
 
 2、迭代、递归的思想&#x20;
 
-3、分治的思想（如：二分查找、归并排序等）
+3、<mark style="color:orange;">分治</mark>的思想（如：二分查找、<mark style="color:red;">归并排序</mark>等）
 
-4、搜索算法（深搜，广搜、动态规划等）
+4、搜索算法（<mark style="color:orange;">深搜，广搜</mark>、动态规划等）
 
-5、DFS
+<mark style="color:red;">5、DFS</mark>
 
 ### 算法应用（重点关注）：
 
 深度遍历
 
-记忆
+<mark style="color:red;">记忆</mark>
 
-并查集
+<mark style="color:red;">并查集</mark>
 
 剪枝
 
 动态规划
 
-二叉树
+<mark style="color:orange;">二叉树</mark>
 
-图
+<mark style="color:red;">图</mark>
 
 队列
 
 贪心算法
 
-状态压缩
+<mark style="color:orange;">状态压缩</mark>
 
-排序、拓扑排序
+<mark style="color:red;">排序、拓扑排序</mark>
