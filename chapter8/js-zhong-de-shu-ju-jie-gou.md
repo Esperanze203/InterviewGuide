@@ -433,11 +433,11 @@ function HashTable() {
 
 在计算机科学中，树是一种十分重要的数据结构。树被描述为一种分层数据抽象模型，常用来描述数据间的层级关系和组织结构。树也是一种非顺序的数据结构。下图展示了树的定义：
 
-![树的定义](../.gitbook/assets/image.png)
+![树的定义](<../.gitbook/assets/image (5).png>)
 
 #### **树的常用遍历方式**
 
-****![](<../.gitbook/assets/image (5).png>)****
+****![](<../.gitbook/assets/image (5) (1).png>)****
 
 &#x20;**1. 深度优先遍历**
 
@@ -1135,3 +1135,5 @@ console.log(bfs(graph, 1));
   4: Infinity
 }
 ```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
