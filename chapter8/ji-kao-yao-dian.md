@@ -4,9 +4,9 @@
 
 ### 基础准备
 
-1、输入的读取解析，和格式输出
+1、输入的<mark style="color:orange;">读取解析</mark>，和<mark style="color:red;">格式输出</mark>
 
-2、基础类型（如：bit，byte，浮点型，8进制/10进制/16进制，补码，等）
+2、基础类型（如：<mark style="color:red;">bit，byte，浮点型</mark>，<mark style="color:orange;">8进制/10进制/16进制</mark>，<mark style="color:red;">补码</mark>，等）
 
 ### 基础数据结构概念，基本操作，以及优缺点等
 
