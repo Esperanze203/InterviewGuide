@@ -2,43 +2,48 @@
 
 ### 一、JS数据类型
 
-**值类型(基本类型)**：字符串（String）、数字(Number)、布尔(Boolean)、空（Null）、未定义（Undefined）、Symbol。
+**值类型(基本类型)**：
 
-**引用数据类型（对象类型）**：对象(Object)、数组(Array)、函数(Function)，还有两个特殊的对象：正则（RegExp）和日期（Date）。
+字符串（**String**）、数字(**Number**)、布尔(**Boolean**)、空（**Null**）、未定义（**Undefined**）、**Symbol**。
 
-**注：**<mark style="color:red;">Symbol</mark> 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。
+注**：**<mark style="color:red;">Symbol</mark> 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。
 
-![](../.gitbook/assets/Javascript-DataType.png)
+**引用数据类型（对象类型）**：
 
-#### JavaScript 拥有动态类型
+对象(**Object**)、数组(**Array**)、函数(**Function**)，还有两个特殊的对象：正则（**RegExp**）和日期（**Date**）。（ES6提供：**Map**,**Set**）
+
+**JavaScript 拥有动态类型**
 
 JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型。
 
-#### Undefined 和 Null
+**Undefined 和 Null**
 
-Undefined 这个值表示变量不含有值。
+Undefined 这个值表示变量**不含有值**。可以通过将变量的值设置为 null 来**清空变量**。
 
-可以通过将变量的值设置为 null 来清空变量。
+### **二、js基本数据类型有哪些？引用数据类型有哪些？基本数据类型和引用数据类型的区别？**&#x20;
 
-### 二、创建 Boolean 对象
+基本数据类型：null、undefined、symbol、boolean、string、number
+
+引用数据类型：Object、Array、Function、RegExp、Date、特殊的**基本包装类型**（String、Number、Boolean）、单体**内置对象**（Global、Math）
+
+**区别**：
+
+1. 基本数据类型的比较是值的比较；引用数据类型比较的是内存地址是否相同
+2. 基本数据类型存放在栈区；引用数据类型同时存放在栈区和堆区
+3. 基本数据类型的赋值是简单赋值；引用数据类型赋值是对象引用
+4. 基本数据类型不能添加引用和方法；引用数据类型可以
+
+### **三、什么是symbol？**
+
+ES6新增属性，Symbol(description)函数生成一个全局唯一的值，能够作为对象属性的标识符；description为字符串类型，仅作为对symbol的描述，相当于一个注释。
+
+### 四、Boolean 对象的值
 
 Boolean 对象代表两个值:"true" 或者 "false"
 
-下面的代码定义了一个名为 myBoolean 的布尔对象：
-
-```javascript
-var myBoolean = new Boolean();
-```
-
 如果布尔对象**无初始值**或者其值为:
 
-* **0**
-* **-0**
-* **null**
-* **""**
-* **false**
-* **undefined**
-* **NaN**
+* <mark style="color:orange;">**0，-0，null，""，false，undefined，NaN**</mark>
 
 那么对象的值为 **false**。否则，其值为 **true**（即使当变量值为字符串 "false" 时）！
 
@@ -52,8 +57,6 @@ var myBoolean = new Boolean();
 | toString()                       | 将数组转换为字符串           |
 | Array.from(arrayLike)            | 将**伪数组**转化为**真数组**  |
 | Array.of(value1, value2, value3) | 创建数组：将**一系列值**转换成数组 |
-
-注意，获取数组的长度是用`length`属性，不是方法。关于 `length`属性，详见上一篇文章。
 
 #### [#](https://web.qianguyihao.com/04-JavaScript%E5%9F%BA%E7%A1%80/19-%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95.html#%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4) 数组元素的添加和删除 <a href="#shu-zu-yuan-su-de-tian-jia-he-shan-chu" id="shu-zu-yuan-su-de-tian-jia-he-shan-chu"></a>
 
@@ -79,35 +82,30 @@ var myBoolean = new Boolean();
 
 #### [#](https://web.qianguyihao.com/04-JavaScript%E5%9F%BA%E7%A1%80/19-%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95.html#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F) 数组排序 <a href="#shu-zu-pai-xu" id="shu-zu-pai-xu"></a>
 
-| 方法                                     | 描述                                                                                 | 备注     |
-| -------------------------------------- | ---------------------------------------------------------------------------------- | ------ |
-| reverse()                              | 反转数组，返回结果为**反转后的数组**                                                               | 会改变原数组 |
-| <mark style="color:red;">sort</mark>() | 对数组的元素,默认按照**Unicode 编码**，从小到大进行排序；语法：_**array**_**.sort(**_**sortfunction**_**)** | 会改变原数组 |
+| 方法                                     | 描述                                                                                  | 备注     |
+| -------------------------------------- | ----------------------------------------------------------------------------------- | ------ |
+| reverse()                              | 反转数组，返回结果为**反转后的数组**                                                                | 会改变原数组 |
+| <mark style="color:red;">sort</mark>() | 对数组的元素,默认按照**Unicode 编码**，从小到大进行排序；语法：_**array**_**.sort(**_**sort function**_**)** | 会改变原数组 |
 
-<mark style="color:red;">sort</mark>() 默认排序顺序为按**字母升序**。
-
-**注意：**当数字是按字母顺序排列时"40"将排在"5"前面。
+**注意：**<mark style="color:red;">sort</mark>() 默认排序顺序为按**字母升序**。当数字是按字母顺序排列时"40"将排在"5"前面。
 
 使用数字排序，必须通过一个函数作为参数来调用。函数指定数字是按照升序还是降序排列。例如：
 
 ```javascript
-var points = [40,100,1,5,25,10];
-points.sort(function(a,b){return a-b});
-// 简写：
 points.sort((a,b)=>a-b);
 ```
 
 #### [#](https://web.qianguyihao.com/04-JavaScript%E5%9F%BA%E7%A1%80/19-%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95.html#%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E7%9A%84%E5%85%83%E7%B4%A0) 查找数组的元素 <a href="#cha-zhao-shu-zu-de-yuan-su" id="cha-zhao-shu-zu-de-yuan-su"></a>
 
-| 方法                    | 描述                                           | 备注                                |
-| --------------------- | -------------------------------------------- | --------------------------------- |
-| indexOf(value)        | 从前往后索引，检索一个数组中是否含有指定的元素                      |                                   |
-| lastIndexOf(value)    | 从后往前索引，检索一个数组中是否含有指定的元素                      |                                   |
-| includes(item)        | 数组中是否包含指定的内容                                 |                                   |
-| find(function())      | 找出**第一个**满足「指定条件返回 true」的元素                  |                                   |
-| findIndex(function()) | 找出**第一个**满足「指定条件返回 true」的元素的 index           |                                   |
-| every()               | 确保数组中的每个元素都满足「指定条件返回 true」，则停止遍历，此方法才返回 true | 全真才为真。要求每一项都返回 true，最终的结果才返回 true |
-| some()                | 数组中只要有一个元素满足「指定条件返回 true」，则停止遍历，此方法就返回 true  | 一真即真。只要有一项返回 true，最终的结果就返回 true   |
+| 方法                    | 描述                                           |
+| --------------------- | -------------------------------------------- |
+| indexOf(value)        | 从前往后索引，检索一个数组中是否含有指定的元素                      |
+| lastIndexOf(value)    | 从后往前索引，检索一个数组中是否含有指定的元素                      |
+| includes(item)        | 数组中是否包含指定的内容                                 |
+| find(function())      | 找出**第一个**满足「指定条件返回 true」的元素                  |
+| findIndex(function()) | 找出**第一个**满足「指定条件返回 true」的元素的 index           |
+| every()               | 确保数组中的每个元素都满足「指定条件返回 true」，则停止遍历，此方法才返回 true |
+| some()                | 数组中只要有一个元素满足「指定条件返回 true」，则停止遍历，此方法就返回 true  |
 
 #### [#](https://web.qianguyihao.com/04-JavaScript%E5%9F%BA%E7%A1%80/19-%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95.html#%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84) 遍历数组 <a href="#bian-li-shu-zu" id="bian-li-shu-zu"></a>
 
@@ -119,4 +117,95 @@ points.sort((a,b)=>a-b);
 | filter()  | 过滤数组：返回结果是 true 的项，将组成新的数组，返回结果为**新的数组** | 不会改变原数组                                                         |
 | reduce    | 接收一个函数作为累加器，返回值是回调函数累计处理的结果              | [JS reduce 函数](https://juejin.im/post/5d78aa3451882521397645ae) |
 
-### 四、JS精度丢失
+### <mark style="color:red;">四、JS精度丢失</mark>
+
+### **五、js内存空间**
+
+* 栈：存放变量
+* 堆：存放复杂对象
+* 池（一般也归类为栈中）：存放常量
+
+栈内存由于自身数据结构的特点，系统效率较高；堆内存需要分配空间和地址，还要把地址存到栈中，所以效率低于栈
+
+### **六、变量类型与内存的关系**
+
+*   基本数据类型存放在栈区（栈内存中的变量一般在其当前执行环境结束就会被销毁和回收）
+
+    基本数据类型占用空间小、大小固定，按值访问，属于被频繁使用的数据。
+*   引用数据类型存放在栈区和堆区（堆内存中的变量只有在所有对它的引用都结束时才会被回收）
+
+    引用数据类型占用空间大、大小不固定，若存储在栈中会影响程序运行的性能；但引用数据类型的指针存储在栈中，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会先检索其在栈中的地址，取得地址后再从堆中获得实体。
+
+### **七、什么是内存泄露？常见的内存泄露有哪些？如何避免？**
+
+1. 定义：由于疏忽或错误造成程序未能释放那些已经不再使用的内存，造成内存的浪费
+2. 案例：
+   * 由于未声明而意外产生的全局变量
+   * 没有回收的定时器和回调函数
+   * 闭包（闭包之间是共享作用域的）
+   * DOM元素的引用
+3. 解决方案：
+   * 减少不必要的全局变量，使用严格模式避免意外创建全局变量
+   * 使用完数据后及时解除引用（DOM引用、闭包中的变量、定时器清除）
+   * 组织好函数逻辑，避免死循环等造成浏览器卡顿和崩溃
+
+参考：[「前端进阶」JS中的内存管理](https://juejin.im/post/5d0706a6f265da1bc23f77a9)
+
+### **八、JS垃圾回收的两种方法**
+
+* 标记清除：总体思想是将寻找不再使用的对象变为寻找无法到达的对象，即从根部（全局对象）出发定时扫描内存中的对象，凡是能从根部到达的对象都是还需要使用的。
+  1. 垃圾收集器在运行的时候会给存储在内存中的所有变量都加上标记
+  2. 从根部出发将能触及到的对象的标记清除
+  3. 还存在标记的变量被视为准备删除的变量
+  4. 垃圾收集器执行最后一步内存清除工作，销毁那些带标记的值并回收它们所占用的内存空间
+* 引用计数：统计引用类型变量声明后被引用次数，当次数为0时该变量被回收。
+
+### **九、let、const、var区别**
+
+|   类型  | 变量提升 | 暂时性死区 | 重复声明 | 初始值 |     作用域     |
+| :---: | :--: | :---: | :--: | :-: | :---------: |
+|  var  |  存在  |  不存在  |  允许  | 不需要 | 全局作用域、函数作用域 |
+|  let  |  不存在 |   存在  |  不允许 | 不需要 |    块级作用域    |
+| const |  不存在 |   存在  |  不允许 |  需要 |    块级作用域    |
+
+变量提升：变量可在声明前使用\
+暂时性死区：代码块内，使用let、const声明变量之前，该变量都是不可用的
+
+### **十、JS类型判断**
+
+typeof A、A instanceof B、Object.prototype.toString.call (A)
+
+注意：数组判断不能用typeof（typeof只能判断是否是object）
+
+### **十一、==和===、以及Object.is的区别**
+
+\==：两边值类型不同时，强制转换成number再进行比较（null==undefined→true）
+
+\===：严格比较运算符，不会进行强制类型转换（+0===-0 true；NaN===NaN false）
+
+Object.is()：与===基本一致（Object.is(+0,-0) false；Object.is(NaN,NaN) true）
+
+### **十二、如何获得对象上的属性**
+
+* for(let l in obj)：遍历一个对象及其原型链中所有可枚举的属性
+* **object.keys**：返回一个包含所有可枚举的属性名称的数组
+* object.getOwnPropertyNames：返回一个包含不可枚举的属性的数组（基本包装类型的原型属性不可枚举，如Object、Array、Number等）
+
+### **十三、JS语言特点**
+
+* 运行在客户端浏览器上
+* 不用预编译，直接解析执行代码
+* 弱类型语言，较为灵活
+* 与操作系统无关，跨平台
+* 脚本语言、解释性语言
+
+### **十四、JS中string的startswith和indexof两种方法的区别**
+
+* str.startsWith(searchString, position)\
+  searchString：要搜素的子字符串\
+  position（可选）：搜索searchString的开始位置，默认为0\
+  能找到返回true，找不到返回false
+* str.indexOf(searchValue, fromIndex)\
+  searchValue：要搜索的字符串\
+  fromIndex（可选）：开始查找的位置，默认为0\
+  没找到返回-1，否则返回searchValue第一次出现的索引
