@@ -1,6 +1,6 @@
 # 防抖和节流
 
-```JavaScript
+```javascript
 //防抖函数：抖动停止后的时间超过设定的时间时执行一次函数
 function debounce(func, delay) {
     var timeout;
@@ -41,4 +41,3 @@ function realFunc () {
 window.addEventListener("resize", debounce(realFunc, 500));
 window.addEventListener("scroll", throttle(realFunc, 1000));
 ```
-
