@@ -1,6 +1,6 @@
 # JavaScript/ES6
 
-### 一、JS[数组的常见方法](https://web.qianguyihao.com/04-JavaScript%E5%9F%BA%E7%A1%80/19-%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95.html#%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95%E6%B8%85%E5%8D%95)
+### \* JS[数组的常见方法](https://web.qianguyihao.com/04-JavaScript%E5%9F%BA%E7%A1%80/19-%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95.html#%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95%E6%B8%85%E5%8D%95)
 
 #### 数组的类型相关 <a href="#shu-zu-de-lei-xing-xiang-guan" id="shu-zu-de-lei-xing-xiang-guan"></a>
 

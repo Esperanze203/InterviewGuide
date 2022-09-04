@@ -32,11 +32,11 @@ HTTPS使用**非对称加密**传输一个**对称密钥**，服务器和客户�
 
 **四、HTTPS和HTTP的区别**
 
-**HTTP**：超文本传输协议，TCP协议的一种，用于从WWW服务器传输超文本到本地浏览器的一种网络协议
+HTTP：超文本传输协议，TCP协议的一种，用于从WWW服务器传输超文本到本地浏览器的一种网络协议
 
-**HTTPS**：<mark style="color:red;">HTTP+SSL</mark>，是HTTP的安全版，加入SSL层实现加密传输和身份认证
+HTTPS：HTTP+SSL，是HTTP的安全版，加入SSL层实现加密传输和身份认证
 
-**区别：**
+区别
 
 * HTTP传输的数据是未加密的，即明文传输；HTTPS是具有安全性的SSL加密传输协议
 * HTTPS需要使用SSL证书；HTTP不用

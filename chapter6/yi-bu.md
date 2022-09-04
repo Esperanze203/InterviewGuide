@@ -1,6 +1,8 @@
 # 异步
 
-### **一、如何解决js加载过程**<mark style="color:red;">**阻塞**</mark>**问题？**
+
+
+### **十六、如何解决js加载过程**<mark style="color:red;">**阻塞**</mark>**问题？**
 
 1. 将script标签放到body底部：此时DOM已加载完毕因此不存在阻塞问题（并非异步策略）
 2.  **异步加载**外部js文件：defer、async
@@ -8,11 +10,13 @@
     <mark style="color:red;">**defer**</mark>**属性**：给script标签设置defer属性，将脚本文件设置为**延迟加载**，遇到带有defer属性的script标签时，浏览器会**再开启一个线程去下载js文件**，<mark style="color:orange;">同时继续解析HTML文档</mark>，**等HTML**全部**解析完毕**DOM加载完成后，**再去执行加载好的js文件**，可以**保证多个js文件的执行顺序**就是它们在页面中的出现顺序。\
     <mark style="color:red;">**async**</mark>**属性**：类似于defer属性，但与defer不同的是，它会在**下载完毕后立刻执行**。对于多个带有async的js文件，**不保证按顺序执行**，哪个js文件先下载完就先执行哪个。
 
-### **二、为什么js是单线程？**&#x20;
+****
+
+### **三十二、为什么js是单线程？**&#x20;
 
 JavaScript作为浏览器脚本语言，主要用途是与用户互动，以及操作DOM，这决定了它只能是单线程，否则会带来很复杂的同步问题。比如若js同时拥有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除这个节点，那浏览器将不知所措。为了利用多核CPU的计算能力，HTML5提出Web Worker标准，允许JS脚本创建多个线程，但子线程完全受主线程控制，且不得操作DOM，所以该标准并没有改变JS单线程的本质。
 
-### **三、什么是Web Worker？使用Web Worker有什么注意点？**&#x20;
+### **三十三、什么是Web Worker？使用Web Worker有什么注意点？**&#x20;
 
 Web Worker的作用是为JS创建多线程环境，允许主线程创建Worker线程，将一些任务分配给线程运行。主线程运行的同时，Worker线程在后台运行，两者互不干扰；Worker线程完成计算任务后，再把结果返回给主线程。
 
@@ -23,7 +27,7 @@ Web Worker的作用是为JS创建多线程环境，允许主线程创建Worker�
 * 通信限制：worker线程和主线程不在同一上下文环境，不能直接通信，须通过消息完成
 * 文件限制：worker线程无法读取本地文件，所加载的脚本必须来自网络
 
-### **四、什么是promise？**
+### **三十六、什么是promise？**
 
 1. Promise是一个构造函数，用来生成promise实例
 2. 构造函数接收一个参数，这个参数是一个函数，当创建实例的时候，该作为参数的函数里的内容会立即执行
@@ -42,7 +46,7 @@ Web Worker的作用是为JS创建多线程环境，允许主线程创建Worker�
 
 **参考**：[ES6基础之详解Promise基本用法](https://blog.csdn.net/zhy13087344578/article/details/78132105)
 
-### **五、async和await如何使用？**
+### **三十七、async和await如何使用？**
 
 async关键字用于声明一个function是异步的，被async修饰的函数返回的是一个promise；
 
@@ -52,7 +56,7 @@ async/await中的错误处理：使用try-catch来错误捕捉；使用promise�
 
 _参考_：[理解async/await](https://juejin.im/post/5d9e8539f265da5b8a515e63)
 
-### **六、浏览器中的Event Loop事件循环**
+### **三十九、浏览器中的Event Loop事件循环**
 
 JavaScript：单线程（代码执行时只有一个主线程来处理所有任务）非阻塞（当代码需要进行一项异步任务时，主线程挂起该任务，然后在异步任务返回结果的时候再根据一定规则去执行相应的回调→Event Loop）
 
@@ -74,7 +78,7 @@ JavaScript：单线程（代码执行时只有一个主线程来处理所有任�
 
     同步任务→promise等微任务→制作render树→requestAnimationFrame→制作render树→第一帧重绘完成→setTimeout等宏任务
 
-### **七、Node中的Event Loop事件循环**
+### **四十、Node中的Event Loop事件循环**
 
 1.  Node简介
 
@@ -114,7 +118,7 @@ JavaScript：单线程（代码执行时只有一个主线程来处理所有任�
     process.nextTick\
     独立于Event Loop之外，有一个自己的队列，当每个阶段完成后如果存在nextTick队列，就会转而清空nextTick队列中的所有回调函数，且优先于其他microtask执行。
 
-### **八、Node与浏览器的Event Loop差异**
+### **四十一、Node与浏览器的Event Loop差异**
 
 Microtask任务队列的执行时机不同
 
