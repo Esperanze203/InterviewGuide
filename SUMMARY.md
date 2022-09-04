@@ -1,6 +1,8 @@
 # Table of contents
 
 * [自我介绍一下](README.md)
+* [大厂面试每日一题](da-chang-mian-shi-mei-ri-yi-ti.md)
+* [知识点自查](zhi-shi-dian-zi-cha.md)
 * [计算机基础](chapter2/README.md)
   * [操作系统](chapter2/cao-zuo-xi-tong/README.md)
     * [进程与线程](chapter2/cao-zuo-xi-tong/jin-cheng-yu-xian-cheng.md)
